@@ -5,5 +5,4 @@ module SenpaisArenaOfHeroes {
     exports de.dummyapt.senpaisarenaofheroes.hero;
     exports de.dummyapt.senpaisarenaofheroes.fiend;
     exports de.dummyapt.senpaisarenaofheroes.gui;
-    exports de.dummyapt.senpaisarenaofheroes;
 }

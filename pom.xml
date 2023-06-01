@@ -6,7 +6,7 @@
 
     <groupId>de.dummyapt</groupId>
     <artifactId>SenpaisArenaOfHeroes</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>demo</version>
     <name>SenpaisArenaOfHeroes</name>
 
     <properties>
