@@ -18,16 +18,14 @@ public class Game {
 
     public Game() {
         var spawnEngine = new SpawnEngine();
-        die = new Die(5);
-        fiends = new Fiend[5];
-        heroes = new Hero[5];
+        die = new Die(3);
+        fiends = new Fiend[3];
+        heroes = new Hero[3];
         arena = new Arena(heroes, fiends);
-        for (int i = 0; i < fiends.length; i++) fiends[i] = spawnEngine.spawn();
+        for (var i = 0; i < fiends.length; i++) fiends[i] = spawnEngine.spawn();
         heroes[0] = new Knight(30, "Sir Lancelot");
         heroes[1] = new Mage(20, "Merlin");
         heroes[2] = new Knight(30, "Sir Gawain");
-        heroes[3] = new Mage(20, "Gandalf");
-        heroes[4] = new Knight(30, "Sir Percival");
     }
 
     public static void main(String[] args) {

@@ -11,7 +11,7 @@ public class SpawnEngine {
     private final Random random = new Random();
 
     public Fiend spawn() {
-        int randomFiend = random.nextInt(3);
+        var randomFiend = random.nextInt(3);
         return switch (randomFiend) {
             case 0 -> new Demon();
             case 1 -> new Golem();
