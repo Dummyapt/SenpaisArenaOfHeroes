@@ -1,8 +1,8 @@
 package de.dummyapt.senpaisarenaofheroes.hero;
 
-import de.dummyapt.senpaisarenaofheroes.fiend.Fiend;
+import de.dummyapt.senpaisarenaofheroes.game.GameObject;
 
-public abstract class Hero {
+public abstract class Hero extends GameObject {
     protected String name;
     protected int health;
 
@@ -10,8 +10,6 @@ public abstract class Hero {
         this.health = health;
         this.name = name;
     }
-
-    public abstract void attack(Fiend fiend);
 
     public abstract String getName();
 

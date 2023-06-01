@@ -1,6 +1,7 @@
 package de.dummyapt.senpaisarenaofheroes.hero;
 
 import de.dummyapt.senpaisarenaofheroes.fiend.Fiend;
+import de.dummyapt.senpaisarenaofheroes.game.GameObject;
 
 public class Knight extends Hero {
     public Knight(int health, String name) {
@@ -39,5 +40,13 @@ public class Knight extends Hero {
     @Override
     public String toString() {
         return "Knight{" + "name='" + name + '\'' + ", health=" + health + '}';
+    }
+
+    @Override
+    public void attack(GameObject fiend) {
+    }
+
+    @Override
+    public void sustainDamage(int damage) {
     }
 }
