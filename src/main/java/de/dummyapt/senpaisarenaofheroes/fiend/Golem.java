@@ -1,30 +1,23 @@
 package de.dummyapt.senpaisarenaofheroes.fiend;
 
+import de.dummyapt.senpaisarenaofheroes.game.GameObject;
 import de.dummyapt.senpaisarenaofheroes.hero.Hero;
 
 public class Golem extends Fiend {
+    protected static final int DAMAGE = 5;
 
-    @Override
-    public void attack(Hero hero) {
-        if (hero.getHealth() > 0) hero.setHealth(hero.getHealth() - 10);
-        if (hero.getHealth() <= 0) {
-            hero.setHealth(0);
-            System.out.println("The " + hero.getClass().getSimpleName() + " has been defeated!");
-        }
+    public Golem(int health) {
+        super(health);
     }
 
     @Override
-    public int getHealth() {
-        return health;
+    public void attack(GameObject h) {
+        h.sustainDamage(DAMAGE);
+        logAction("Fiend: " + getClass() + " attacks Hero " + ((Hero) h).getName() + " Health: " + ((Hero) h).getHealth());
     }
 
     @Override
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    @Override
-    public String toString() {
-        return "Golem{" + "health=" + health + '}';
+    public void sustainDamage(int damage) {
+        setHealth(getHealth() - damage);
     }
 }

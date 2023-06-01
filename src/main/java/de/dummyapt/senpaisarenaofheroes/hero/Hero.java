@@ -3,19 +3,31 @@ package de.dummyapt.senpaisarenaofheroes.hero;
 import de.dummyapt.senpaisarenaofheroes.game.GameObject;
 
 public abstract class Hero extends GameObject {
-    protected String name;
     protected int health;
+    protected String name;
 
-    protected Hero(int health, String name) {
-        this.health = health;
+    public Hero(String name, int health) {
         this.name = name;
+        this.health = health;
     }
 
-    public abstract String getName();
+    public int getHealth() {
+        return health;
+    }
 
-    public abstract void setName(String name);
+    public void setHealth(int health) {
+        if (health < 0) {
+            this.health = 0;
+            return;
+        }
+        this.health = health;
+    }
 
-    public abstract int getHealth();
+    public String getName() {
+        return name;
+    }
 
-    public abstract void setHealth(int health);
+    public void setName(String name) {
+        this.name = name;
+    }
 }

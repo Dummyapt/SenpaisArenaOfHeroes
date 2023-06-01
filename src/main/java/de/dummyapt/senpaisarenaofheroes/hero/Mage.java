@@ -1,43 +1,23 @@
 package de.dummyapt.senpaisarenaofheroes.hero;
 
 import de.dummyapt.senpaisarenaofheroes.fiend.Fiend;
+import de.dummyapt.senpaisarenaofheroes.game.GameObject;
 
 public class Mage extends Hero {
-    public Mage(int health, String name) {
-        super(health, name);
+    protected static final int DAMAGE = 2;
+
+    public Mage(String name, int health) {
+        super(name, health);
     }
 
     @Override
-    public void attack(Fiend fiend) {
-        if (fiend.getHealth() > 0) fiend.setHealth(fiend.getHealth() - 10);
-        if (fiend.getHealth() <= 0) {
-            fiend.setHealth(0);
-            System.out.println("The " + fiend.getClass().getSimpleName() + " has been defeated!");
-        }
+    public void attack(GameObject h) {
+        h.sustainDamage(DAMAGE);
+        logAction("Hero: " + getName() + " attacks Fiend " + h.getClass() + " Health: " + ((Fiend) h).getHealth());
     }
 
     @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public int getHealth() {
-        return health;
-    }
-
-    @Override
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    @Override
-    public String toString() {
-        return "Mage{" + "name='" + name + '\'' + ", health=" + health + '}';
+    public void sustainDamage(int damage) {
+        setHealth(getHealth() - damage);
     }
 }
